@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Telnet.CharacterPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel LastChildFill="True">
+        <TextBox DockPanel.Dock="Bottom" Name="InputBox" Margin="4" TextWrapping="NoWrap" Text="" VerticalAlignment="Bottom" KeyDown="EntryBox_KeyDown" TextChanged="InputBox_TextChanged" FontFamily="Global Monospace" PreviewKeyDown="InputBox_PreviewKeyDown" />
+        <ProgressBar Name="LineFill" DockPanel.Dock="Bottom" Height="10" Margin="4,0" Minimum="0" Maximum="1024" >
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF740B0B" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+            <ProgressBar.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FFBABABA" Offset="0"/>
+                    <GradientStop Color="#FFC7C7C7" Offset="0.5"/>
+                    <GradientStop Color="#FF7C7C7C" Offset="1"/>
+                </LinearGradientBrush>
+            </ProgressBar.Background>
+        </ProgressBar>
+        <RichTextBox Name="OutputBox" Margin="4" IsReadOnly="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden" UndoLimit="0" FontFamily="Global Monospace">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="10,0,0,0" />
+                    <Setter Property="TextIndent" Value="-10" />
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+    </DockPanel>
+</UserControl>

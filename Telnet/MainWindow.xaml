@@ -1,0 +1,10 @@
+﻿<Window x:Class="Telnet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Telnet" Height="700" Width="700" Closing="Window_Closing_1" PreviewKeyDown="Window_PreviewKeyDown_1">
+    <Grid>
+    <TabControl Name="CharacterTabs" SelectionChanged="CharacterTabs_SelectionChanged">
+            <TabItem Header="New"></TabItem>
+        </TabControl>
+    </Grid>
+</Window>
